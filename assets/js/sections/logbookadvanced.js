@@ -145,6 +145,9 @@ function updateRow(qso) {
 	if ((user_options.dcl.show ?? 'true') == "true"){
 		cells.eq(c++).html(qso.dcl);
 	}
+	if ((user_options.srr.show ?? 'true') == "true"){
+		cells.eq(c++).html(qso.srr);
+	}
 	if ((user_options.qslmsgs.show ?? 'true') == "true"){
 		cells.eq(c++).text(qso.qslMessage);
 	}
@@ -422,6 +425,9 @@ function loadQSOTable(rows) {
 		}
 		if ((user_options.dcl.show ?? 'true') == "true"){
 			data.push(qso.dcl);
+		}
+		if ((user_options.srr.show ?? 'true') == "true"){
+			data.push(qso.srr);
 		}
 		if ((user_options.qslmsgs.show ?? 'true') == "true"){
 			data.push(escapeHtml(qso.qslMessage));
@@ -837,6 +843,8 @@ $(document).ready(function () {
 				eqslReceived: this.eqslReceived.value,
 				dclSent: this.dclSent.value,
 				dclReceived: this.dclReceived.value,
+				srrSent: this.srrSent.value,
+				srrReceived: this.srrReceived.value,
 				qslvia: $('[name="qslvia"]').val(),
 				sota: this.sota.value,
 				pota: this.pota.value,
@@ -2464,7 +2472,8 @@ function saveOptions() {
 				nightshadow_layer: $('input[name="nightshadow"]').is(':checked') ? true : false,
 				qth: $('input[name="qth"]').is(':checked') ? true : false,
 				frequency: $('input[name="frequency"]').is(':checked') ? true : false,
-				dcl: $('input[name="dcl"]').is(':checked') ? true : false
+				dcl: $('input[name="dcl"]').is(':checked') ? true : false,
+				srr: $('input[name="srr"]').is(':checked') ? true : false
 			},
 			success: function(data) {
 				$('#saveButton').prop("disabled", false);
