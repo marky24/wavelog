@@ -1089,7 +1089,7 @@
 												echo ' checked';
 											}
 											echo '>'; ?>
-											<label class="form-check-label" for="user_default_confirmation_srr"><?= __("award.srr"); ?></label>
+											<label class="form-check-label" for="user_default_confirmation_srr"><?= __("SRR"); ?></label>
 										</div>
 									</div>
 								</div>
